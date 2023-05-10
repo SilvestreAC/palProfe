@@ -16,6 +16,7 @@ public class Persona {
 
     @Override
     public String toString() {
+        //https://codigofacilito.com/articulos/format-string-java
         String conFormato = String.format("| %20s | %10.2f | %10.2f |", nombre, sueldoIngreso,impuesto);
         return conFormato;
     }
