@@ -26,7 +26,7 @@ public class Runner {
         System.out.printf("| %20s | %10s | %10s | %15s |%n", "NOMBRE", "SUELDO","IMPUESTO","ZONA APLICADA");
         System.out.println("--------------------------------------------------------------------");
         for (Persona persona1:personas){
-            System.out.printf("%s %15s |%n",persona1,persona1.calculadoraImpuesto.toString());
+            System.out.printf("%s %15s |%n",persona1,persona1.calculadoraImpuesto);
         }
         System.out.println("--------------------------------------------------------------------");
 
