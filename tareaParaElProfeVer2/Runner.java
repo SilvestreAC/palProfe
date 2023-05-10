@@ -95,7 +95,9 @@ public class Runner {
         System.out.println("----CALCULAR EL IMPUESTO SOBRE LA RENTA 2022------");
         System.out.printf("| %20s | %10s | %10s |%n", "NOMBRE", "SUELDO","ISR 2022");
         System.out.println("-------------------------------------------------");
-        Arrays.stream(personasConISR).forEach(System.out::println);
+        Arrays.stream(personasConISR)
+                //.filter(persona -> persona.impuesto>5000)
+                .forEach(System.out::println);
         System.out.println("-------------------------------------------------");
     }
 }
