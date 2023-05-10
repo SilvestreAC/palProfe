@@ -1,6 +1,7 @@
 package tareaParaElProfeVer2;
 
 
+import java.util.Arrays;
 
 public class Runner {
     public static void main(String[] args) {
@@ -10,7 +11,7 @@ public class Runner {
                                     // UTILIZANDO LA TECNICA DE  CONSTRUCTOR INYECTION MANDAS LA IMPLEMENTACION
                                     // DIRECTAMENTE CON -->> new ImpuestoSur(1000) O SEGUN EL CASO QUE REQUIERAS
 
-                new Persona(1000, "paco", new ImpuestoSur(100d)),
+                new Persona(1000, "paco", new ImpuestoSur(1000)),
                 new Persona(1000, "juan", new ImpuestoNorte(1000)),
                 new Persona(1000, "pedro", new ImpuestoFrontera(1000))
         };
@@ -21,9 +22,13 @@ public class Runner {
         // etc  SOLO CREAS LA NUEVA IMPLEMENTACION POR SEPARADO SIN AFECTAR NADA Y LA USAS CUANDO LA NECESITES
 
 
+        System.out.println("-----------IMPUESTOS POR ZONAS ECONOMICAS---------------------------");
+        System.out.printf("| %20s | %10s | %10s | %15s |%n", "NOMBRE", "SUELDO","IMPUESTO","ZONA APLICADA");
+        System.out.println("--------------------------------------------------------------------");
         for (Persona persona1:personas){
-            System.out.println(persona1);
+            System.out.printf("%s %15s |%n",persona1,persona1.calculadoraImpuesto.toString());
         }
+        System.out.println("--------------------------------------------------------------------");
 
         // ALGUNOS EJEMPLOS DE IMPUESTOS QUEHAY EN MEXICO
         // SON
@@ -52,8 +57,45 @@ public class Runner {
         //
         //
 
-        Persona personaDeposita = new Persona(16000,"luisa",new ImpuestoDepositoEfectivo(16000));
-        System.out.println(personaDeposita);
+        Persona[] personaDeposita = {
+                new  Persona(400,"luisa1",new ImpuestoDepositoEfectivo(400)),
+                new  Persona(17000,"luisa2",new ImpuestoDepositoEfectivo(17000)),
+                new  Persona(900,"luisa3",new ImpuestoDepositoEfectivo(900)),
+                new  Persona(19000,"luisa4",new ImpuestoDepositoEfectivo(19000)),
+                new  Persona(1600,"luisa5",new ImpuestoDepositoEfectivo(1600)),
+                new  Persona(18000,"luisa6",new ImpuestoDepositoEfectivo(18000)),
+                new  Persona(100,"luisa7",new ImpuestoDepositoEfectivo(100)),
+        };
 
+
+        //tabla creada con funciones lambdas y streams
+        System.out.println("------IMPUESTO A LOS DEPOSITOS EN EFECTIVO-------");
+        System.out.printf("| %20s | %10s | %10s |%n", "NOMBRE", "DEPOSITO","I.D.E.");
+        System.out.println("-------------------------------------------------");
+        Arrays.stream(personaDeposita).forEach(persona -> System.out.println(persona));
+        System.out.println("-------------------------------------------------");
+
+
+        Persona[] personasConISR= {
+                new Persona(100, "javier1", new ISR2022(100)),
+                new Persona(500, "javier2", new ISR2022(500)),
+                new Persona(5000, "javier3", new ISR2022(5000)),
+                new Persona(8000, "javier4", new ISR2022(8000)),
+                new Persona(9000, "javier5", new ISR2022(9000)),
+                new Persona(11000, "javie6r", new ISR2022(11000)),
+                new Persona(21000, "javie7r", new ISR2022(21000)),
+                new Persona(33000, "javie8r", new ISR2022(33000)),
+                new Persona(63000, "javie9r", new ISR2022(63000)),
+                new Persona(84000, "javier10", new ISR2022(84000)),
+                new Persona(260000.00, "javier11", new ISR2022(260000.00))
+        };
+
+
+        //tabla creada con programacion funcional y streams
+        System.out.println("----CALCULAR EL IMPUESTO SOBRE LA RENTA 2022------");
+        System.out.printf("| %20s | %10s | %10s |%n", "NOMBRE", "SUELDO","ISR 2022");
+        System.out.println("-------------------------------------------------");
+        Arrays.stream(personasConISR).forEach(System.out::println);
+        System.out.println("-------------------------------------------------");
     }
 }

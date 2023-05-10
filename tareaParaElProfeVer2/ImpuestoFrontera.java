@@ -14,8 +14,6 @@ public class ImpuestoFrontera implements CalculadoraImpuesto {
 
     @Override
     public String toString() {
-        return "ImpuestoFrontera{" +
-                "CantidadAGravar=" + CantidadAGravar +
-                '}';
+        return "Frontera(8%)";
     }
 }

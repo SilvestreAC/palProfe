@@ -11,6 +11,8 @@ public class Persona {
         this.sueldoIngreso = sueldoIngreso;
         this.nombre = nombre;
         this.zonaACobrarImpuesto= zonaACobrarImpuesto;
+
+
         if (zonaACobrarImpuesto=="sur"){
             this.calculadoraImpuesto=new ImpuestoSur(this.sueldoIngreso);
         } else if (zonaACobrarImpuesto=="norte") {

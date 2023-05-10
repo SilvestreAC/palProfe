@@ -14,8 +14,6 @@ public class ImpuestoNorte implements CalculadoraImpuesto {
 
     @Override
     public String toString() {
-        return "ImpuestoNorte{" +
-                "CantidadAGravar=" + CantidadAGravar +
-                '}';
+        return "Norte(16%)";
     }
 }

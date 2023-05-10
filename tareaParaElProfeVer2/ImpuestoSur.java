@@ -14,8 +14,6 @@ public class ImpuestoSur implements CalculadoraImpuesto {
 
     @Override
     public String toString() {
-        return "ImpuestoSur{" +
-                "CantidadAGravar=" + CantidadAGravar +
-                '}';
+        return "Sur(24%)";
     }
 }
