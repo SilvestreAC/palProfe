@@ -80,7 +80,7 @@ public class ISR2022 implements CalculadoraImpuesto{
 
     @Override
     public String toString() {
-        return "ISPT2023{" +
+        return "ISR2023{" +
 //                "limiteInferior=" + limiteInferior +
 //                ", limiteSuperior=" + limiteSuperior +
 //                ", cuotaFija=" + cuotaFija +
