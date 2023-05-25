@@ -4,6 +4,10 @@ public class Pentagono implements PerimtroCalculable {
     int longitudLado;
     int perimetro;
 
+    /***
+     *
+     * @param longitudLado
+     */
     public Pentagono(int longitudLado) {
         this.longitudLado = longitudLado;
     }
