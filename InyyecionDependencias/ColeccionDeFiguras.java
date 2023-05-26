@@ -1,6 +1,8 @@
 package InyyecionDependencias;
 
 public class ColeccionDeFiguras {
+
+    //Field Inyection
     Figuras[] figuras= {
             new FigurasCudrado(1), new FigurasPentagono(1),new FigurasTriangulo(31,3,4),
             new FigurasCudrado(2), new FigurasPentagono(2),new FigurasTriangulo(32,3,4),
@@ -17,6 +19,7 @@ public class ColeccionDeFiguras {
 
 
 
+    //Constructor Inyection
     public ColeccionDeFiguras(Figuras[] figuras) {
         this.figuras = figuras;
     }
@@ -24,10 +27,12 @@ public class ColeccionDeFiguras {
     public ColeccionDeFiguras() {
     }
 
+
     public Figuras[] getFiguras() {
         return figuras;
     }
 
+    //Setter Inyection
     public void setFiguras(Figuras[] figuras) {
         this.figuras = figuras;
     }
